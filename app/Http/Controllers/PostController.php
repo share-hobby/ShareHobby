@@ -34,4 +34,11 @@ class PostController extends Controller
     {
         return view('user.create');
     }
+
+    public function destroy($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect()->route('user.dashboard')->with('success', '投稿が削除されました');
+    }
 }

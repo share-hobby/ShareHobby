@@ -31,6 +31,7 @@
                         @endif
                         <p>作成日時: {{ $post->created_at->format('Y-m-d H:i') }}</p>
                         <a href="{{ route('admin.shows', $post->id) }}" class="btn-detail">詳細を見る</a>
+
                     </li>
                 @endforeach
             </ul>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,15 +9,13 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
     <link rel="stylesheet" href="/vendors/feather/feather.css">
     <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
     <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
-
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -31,9 +28,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" />
 </head>
 
-
 <body>
-
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         @include('user.includes.navbar')
@@ -62,7 +57,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
             @include('user.includes.sidebar')
@@ -73,69 +67,57 @@
                         <div class="col-md-12 grid-margin">
                             <div class="row">
                                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                                    <h3 class="font-weight-bold">Welcome @if($LoggedUserInfo)
-                                        <span>{{ $LoggedUserInfo ['name'] }}</span>
-                                        <span class="badge badge-primary">{{ $LoggedUserInfo ['role'] }}</span>
-
+                                    <h3 class="font-weight-bold">
+                                        Welcome
+                                        @if($LoggedUserInfo)
+                                            <span>{{ $LoggedUserInfo['name'] }}</span>
+                                            <span class="badge badge-primary">{{ $LoggedUserInfo['role'] }}</span>
                                         @endif
                                     </h3>
-
-                                    <h6 class="font-weight-normal mb-0">All systems are running smoothly! </h6>
+                                    <h6 class="font-weight-normal mb-0">All systems are running smoothly!</h6>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                     <div>
-                    <a href ={{ route('user.create') }}>新規登録</a>
+                        <a href="{{ route('user.create') }}">新規登録</a>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 grid-margin stretch-card">
-                            <div class="card tale-bg">
-                                <div class="card-people mt-auto">
-                                <img src="/images/dashboard/people.svg" alt="people">                                <div class="weather-info">
-                                        <div class="d-flex">
-
-
-
+                    
                     <!-- 投稿機能 -->
                     <div>
-                        <a>ここに一覧表示</a>
-                    </div>
-                    <div class="row">
-                    <h2>投稿一覧</h2>
-        @if($posts->isEmpty())
-            <p>投稿はまだありません。</p>
-        @else
-            <ul>
-                @foreach($posts as $post)
-                    <li class="post-item">
-                        <h3>{{ $post->title }}</h3>
-                        @if($post->image)
-                            <img src="{{ asset('storage/' . $post->image) }}" alt="投稿画像">
+                        <h2>投稿一覧</h2>
+                        @if($posts->isEmpty())
+                            <p>投稿はまだありません。</p>
+                        @else
+                            <ul>
+                                @foreach($posts as $post)
+                                    <li class="post-item">
+                                        <h3>{{ $post->title }}</h3>
+                                        @if($post->image)
+                                            <img src="{{ asset('storage/' . $post->image) }}" alt="投稿画像">
+                                        @endif
+                                        <p>作成日時: {{ $post->created_at->format('Y-m-d H:i') }}</p>
+                                        <a href="{{ route('user.show', ['id' => $post->id]) }}">詳細</a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         @endif
-                        <p>作成日時: {{ $post->created_at->format('Y-m-d H:i') }}</p>
-                        <a href="{{ route('user.show', ['id' => $post->id]) }}">詳細</a>
-                    </li>
-                @endforeach
-            </ul>
-        @endif
-
-                    <div class="col-12 grid-margin stretch-card">
-                        <div class="card">
-
-                        </div>
                     </div>
-
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card"></div>
+                    </div>
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->
                     <footer class="footer">
                         <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
-                                2021. Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin
-                                    template</a> from BootstrapDash. All rights reserved.</span>
-                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
-                                with <i class="ti-heart text-danger ml-1"></i></span>
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                                Copyright © 2021. Premium
+                                <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a>
+                                from BootstrapDash. All rights reserved.
+                            </span>
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                                Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i>
+                            </span>
                         </div>
                     </footer>
                     <!-- partial -->
@@ -144,38 +126,23 @@
             </div>
             <!-- page-body-wrapper ends -->
         </div>
-        <!-- container-scroller -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        
-
-        <!-- plugins:js -->
-        <script src="/vendors/js/vendor.bundle.base.js"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page -->
-        <script src="/vendors/chart.js/Chart.min.js"></script>
-        <script src="/vendors/datatables.net/jquery.dataTables.js"></script>
-        <script src="/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-        <script src="/js/dataTables.select.min.js"></script>
-
-        <!-- End plugin js for this page -->
-        <!-- inject:js -->
-        <script src="/js/off-canvas.js"></script>
-        <script src="/js/hoverable-collapse.js"></script>
-        <script src="/js/template.js"></script>
-        <script src="/js/settings.js"></script>
-        <script src="/js/todolist.js"></script>
-        <!-- endinject -->
-        <!-- Custom js for this page-->
-        <script src="/js/dashboard.js"></script>
-        <script src="/js/Chart.roundedBarCharts.js"></script>
-        <!-- End custom js for this page-->
+    </div>
+    <!-- plugins:js -->
+    <script src="/vendors/js/vendor.bundle.base.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="/vendors/chart.js/Chart.min.js"></script>
+    <script src="/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="/js/dataTables.select.min.js"></script>
+    <!-- inject:js -->
+    <script src="/js/off-canvas.js"></script>
+    <script src="/js/hoverable-collapse.js"></script>
+    <script src="/js/template.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/todolist.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/Chart.roundedBarCharts.js"></script>
 </body>
 
 </html>
-
-
-
-
-

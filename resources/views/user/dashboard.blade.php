@@ -102,7 +102,24 @@
                     <div>
                         <a>ここに一覧表示</a>
                     </div>
-
+                    <div class="row">
+                    <h2>投稿一覧</h2>
+        @if($posts->isEmpty())
+            <p>投稿はまだありません。</p>
+        @else
+            <ul>
+                @foreach($posts as $post)
+                    <li class="post-item">
+                        <h3>{{ $post->title }}</h3>
+                        @if($post->image)
+                            <img src="{{ asset('storage/' . $post->image) }}" alt="投稿画像">
+                        @endif
+                        <p>作成日時: {{ $post->created_at->format('Y-m-d H:i') }}</p>
+                        <a href="{{ route('user.dashboard') }}" class="btn-detail">詳細を見る</a>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
 
                     <div class="col-12 grid-margin stretch-card">
                         <div class="card">

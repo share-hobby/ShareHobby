@@ -19,6 +19,10 @@ class AdminsController extends Controller
     public function login() {
         return view("admin.login");
     }
+    public function shows($id) {
+        $post = Post::findOrFail($id);
+        return view("admin.show", compact('post'));
+    }
     
     public function chats()
     {

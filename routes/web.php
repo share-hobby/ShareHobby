@@ -25,12 +25,10 @@ Route::put('/user/updateProfile', [UsersController::class, 'updateProfile'])->na
 Route::get('/user/dashboard', [UsersController::class, 'dashboard'])->name('user.dashboard');
 Route::get('/user/create',[PostController::class, 'create'])->name('user.create');
 Route::post('/user/posts', [PostController::class, 'store'])->name('posts.store');
-
 Route::get('/user/show/{id}', [UsersController::class, 'show'])->name('user.show');
 Route::delete('/user/show/{id}', [PostController::class, 'destroy'])->name('post.destroy');
 Route::get('/user/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/user/update/{id}', [PostController::class, 'update'])->name('post.update');
-
 
 
 Route::post('/admin/save', [AdminsController::class, 'save'])->name('admin.save');
@@ -44,6 +42,7 @@ Route::get('/admin/register', [AdminsController::class, 'register'])->name('admi
 Route::get('/admin/chats', [AdminsController::class, 'chats'])->name('admin.chats');
 Route::get('/admin/dashboard', [AdminsController::class, 'dashboard'])->name('admin.dashboard');
 Route::put('/admin/updateProfile', [AdminsController::class, 'updateProfile'])->name('admin.updateProfile');
+Route::get('/admin/shows/{id}', [AdminsController::class, 'shows'])->name('admin.shows');
 
 
 Route::get('/admin/fetch-messages', [ChatsController::class, 'fetchMessages'])->name('admin.fetchMessages');

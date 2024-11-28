@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Chat;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -125,6 +126,9 @@ class UsersController extends Controller
     
     public function dashboard()
     {
+
+        $posts = Post::latest()->get();
+
         $userId = session('LoggedUserInfo');
     
         // Check if the session has the correct user ID
@@ -139,7 +143,7 @@ class UsersController extends Controller
         // Fetch the messages, ensuring they are ordered by the newest first
         
     
-        return view('user.dashboard', [
+        return view('user.dashboard', compact('posts'),[
             'LoggedUserInfo' => $LoggedUserInfo,
        
         ]);

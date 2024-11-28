@@ -72,11 +72,10 @@
                         <div class="col-md-12 grid-margin">
                             <div class="row">
                                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                                    <h3 class="font-weight-bold">Welcome @if($LoggedAdminInfo)
+                                    <h3 class="font-weight-bold">ようこそ @if($LoggedAdminInfo)
                                         <span>{{ $LoggedAdminInfo ['name'] }}</span>
                                         @endif
                                     </h3>
-                                    <h6 class="font-weight-normal mb-0">All systems are running smoothly! </h6>
                                 </div>
                                 @if (session('success'))
                     <div class="alert alert-success fade show" role="alert">

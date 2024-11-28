@@ -38,6 +38,12 @@
             <p><strong>作成日時:</strong> {{ $post->created_at->format('Y-m-d H:i') }}</p>
         </div>
 
+        <form action="{{ route('post.destroy', $post->id) }}" method="POST" onsubmit="return confirm('本当に削除しますか？')">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">削除</button>
+        </form>
+
         <a href="{{ route('user.dashboard') }}">戻る</a>
     </div>
 </body>

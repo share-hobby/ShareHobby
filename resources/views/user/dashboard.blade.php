@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>MyPage</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
@@ -86,77 +86,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 grid-margin stretch-card">
-                            <div class="card tale-bg">
-                                <div class="card-people mt-auto">
-                                <img src="/images/dashboard/people.svg" alt="people">                                <div class="weather-info">
-                                        <div class="d-flex">
 
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 grid-margin mt-6 transparent">
-                            <div class="row">
-                                <br>
-                                <div class="col-md-6 mb-4 mt-4 stretch-card transparent">
-                                    <div class="card card-tale">
-                                        <a href="{{ url('user/purchases') }}"
-                                            style="text-decoration: none; color: inherit;">
-                                            <div class="card-body">
-                                                <p class="mb-4">Total Purchases</p>
-                                                <p class="fs-30 mb-2"> </p>
-                                                <p>10.00% (30 days)</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 mt-4 stretch-card transparent">
-                                    <div class="card card-dark-blue">
-                                        <a href="{{ url('user/questions') }}"
-                                            style="text-decoration: none; color: inherit;">
-                                            <div class="card-body">
-                                                <p class="mb-4">Total Ask Questions</p>
-                                                <p class="fs-30 mb-2"> </p>
-                                                <p>22.00% (30 days)</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                                    <div class="card card-light-blue">
-                                        <a href="{{ url('user/questions') }}"
-                                            style="text-decoration: none; color: inherit;">
-                                            <div class="card-body">
-                                                <p class="mb-4">Total Likes On Questions</p>
-                                                <p class="fs-30 mb-2"> </p>
-                                                <p>2.00% (30 days)</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 stretch-card transparent">
-                                    <div class="card card-light-danger">
-                                        <a href="{{ url('user/likes/products') }}"
-                                            style="text-decoration: none; color: inherit;">
-                                            <div class="card-body">
-                                                <p class="mb-4">Products U Like</p>
-                                                <p class="fs-30 mb-2"> </p>
-                                                <p>0.22% (30 days)</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <!-- 投稿機能 -->
+                    <div>
+                        <a>ここに一覧表示</a>
                     </div>
+
+
                     <div class="col-12 grid-margin stretch-card">
                         <div class="card">
 

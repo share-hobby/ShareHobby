@@ -5,20 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!-- Vendor CSS -->
     <link rel="stylesheet" href="/vendors/feather/feather.css">
     <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
+    <!-- Plugin CSS for this page -->
     <link rel="stylesheet" href="/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" type="text/css" href="/usertemplate/js/select.dataTables.min.css">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/vertical-layout-light/style.css">
-    <!-- endinject -->
     <link rel="shortcut icon" href="/images/favicon.png" />
-
+    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Toastr CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
@@ -31,9 +29,7 @@
                 <div class="row w-100 mx-0">
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                            <div class="brand-logo">
-                                <img src="/images/logo.svg" alt="logo">
-                            </div> @if (session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success">
                                     {{ session('success') }}
                                 </div>
@@ -50,29 +46,28 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ route('admin.check') }}" method="POST">
-    @csrf
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
 
+                            <form action="{{ route('admin.check') }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </form>
 
                             <div class="text-center mt-4 font-weight-light">
-    Don't have an account? <a href="/admin/register" class="text-primary">Create</a>
-</div>
-<div class="text-center mt-2">
-    <a   class="text-primary">
-        <i class="fas fa-lock"></i> Forgot Password?
-    </a>
-</div>
-
+                                Don't have an account? <a href="/admin/register" class="text-primary">Create</a>
+                            </div>
+                            <div class="text-center mt-2">
+                                <a class="text-primary">
+                                    <i class="fas fa-lock"></i> Forgot Password?
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,20 +76,16 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
+
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-   
-    <!-- container-scroller -->
-    <!-- plugins:js -->
+    <!-- Vendor JS -->
     <script src="/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
+    <!-- Custom JS -->
     <script src="/js/off-canvas.js"></script>
     <script src="/js/hoverable-collapse.js"></script>
     <script src="/js/template.js"></script>

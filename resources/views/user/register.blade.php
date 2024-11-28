@@ -49,7 +49,7 @@
                 <label for="password">パスワード(８文字以上)</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary">登録</button>
+            <button type="submit" class="btn btn-primary register">登録</button>
         </form>
 
         <div class="text-center mt-4 font-weight-light etc">

@@ -30,7 +30,7 @@
     </a>
     <div class="collapse" id="chat-support">
         <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/user/chat">Chat Support</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/user/chats">Chat Support</a></li>
         </ul>
     </div>
 </li>

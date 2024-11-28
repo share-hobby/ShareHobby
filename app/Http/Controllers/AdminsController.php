@@ -17,7 +17,9 @@ class AdminsController extends Controller
     }
     public function login() {
         return view("admin.login");
-    }public function chats()
+    }
+    
+    public function chats()
     {
         $LoggedAdminInfo = Admin::find(session('LoggedAdminInfo'));
         if (!$LoggedAdminInfo) {

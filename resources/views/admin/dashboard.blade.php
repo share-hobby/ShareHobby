@@ -17,6 +17,7 @@
         </form>
 
         <a href="{{ route('admin.chats') }}" class="btn-chat">チャット画面へ</a>
+        <a href="{{ route('admin.profileview') }}" class="btn-chat">プロフィール画面へ</a>
 
         <h2>投稿一覧</h2>
         @if($posts->isEmpty())

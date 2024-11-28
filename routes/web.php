@@ -25,7 +25,9 @@ Route::put('/user/updateProfile', [UsersController::class, 'updateProfile'])->na
 Route::get('/user/dashboard', [UsersController::class, 'dashboard'])->name('user.dashboard');
 Route::get('/user/create',[PostController::class, 'create'])->name('user.create');
 Route::post('/user/posts', [PostController::class, 'store'])->name('posts.store');
-Route::post('/user/shows', [PostController::class, 'shows'])->name('posts.shows');
+
+Route::get('/user/show/{id}', [UsersController::class, 'show'])->name('user.show');
+
 
 
 Route::post('/admin/save', [AdminsController::class, 'save'])->name('admin.save');

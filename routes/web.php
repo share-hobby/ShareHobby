@@ -6,7 +6,7 @@ use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome_select_role');
 });
 
 Route::post('/user/save', [UsersController::class, 'save'])->name('user.save');

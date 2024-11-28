@@ -19,10 +19,10 @@
     <h1>ログインする役割を選んでください</h1>
 
     <!-- 生徒の場合 -->
-    <button onclick="location.href='{{ url('/user/login') }}'">生徒はこちら</button>
+    <button onclick="location.href='{{ url('/user/login') }}'">講師はこちら</button>
 
     <!-- 講師の場合 -->
-    <button onclick="location.href='{{ url('/admin/login') }}'">講師はこちら</button>
+    <button onclick="location.href='{{ url('/admin/login') }}'">生徒はこちら</button>
 
 </body>
 </html>

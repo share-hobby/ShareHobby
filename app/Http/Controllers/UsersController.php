@@ -215,5 +215,11 @@ class UsersController extends Controller
     return redirect()->route('user.login')->with('success', 'User created successfully!');
     }
 
-     
+    public function show($id)
+    {
+        // IDで投稿を取得
+        $post = Post::findOrFail($id);
+        // ビューに $post を渡す
+        return view('user.show', compact('post'));
+    }
 }

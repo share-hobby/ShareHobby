@@ -86,6 +86,17 @@
                             </div>
                         </div>
                     </div>
+                    <div>
+                    <a href ={{ route('user.create') }}>新規登録</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card tale-bg">
+                                <div class="card-people mt-auto">
+                                <img src="/images/dashboard/people.svg" alt="people">                                <div class="weather-info">
+                                        <div class="d-flex">
+
+
 
                     <!-- 投稿機能 -->
                     <div>

@@ -43,6 +43,7 @@
             @method('DELETE')
             <button type="submit" class="btn btn-danger">削除</button>
         </form>
+        <a href="{{ route('post.edit', $post->id) }}" class="btn btn-warning">編集</a>
 
         <a href="{{ route('user.dashboard') }}">戻る</a>
     </div>

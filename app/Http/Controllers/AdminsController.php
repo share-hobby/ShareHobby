@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Chat;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -79,9 +80,8 @@ class AdminsController extends Controller
             return redirect('admin/login')->with('fail', 'Admin not found');
         }
 
-        return view('admin.dashboard', [
-            'LoggedAdminInfo' => $LoggedAdminInfo
-        ]);
+            $posts = Post::latest()->get();
+        return view('admin.dashboard', compact('posts', 'LoggedAdminInfo'));
     }
     
     

@@ -28,6 +28,8 @@ Route::post('/user/posts', [PostController::class, 'store'])->name('posts.store'
 
 Route::get('/user/show/{id}', [UsersController::class, 'show'])->name('user.show');
 Route::delete('/user/show/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+Route::get('/user/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
+Route::put('/user/update/{id}', [PostController::class, 'update'])->name('post.update');
 
 
 

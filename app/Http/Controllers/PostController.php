@@ -41,4 +41,30 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('user.dashboard')->with('success', '投稿が削除されました');
     }
+
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('user.edit', compact('post'));
+    }
+
+    public function update(Request $request, $id)
+{
+    // 投稿を取得
+    $post = Post::findOrFail($id);
+
+    // 投稿を更新
+    $post->title = $request->input('title');
+    $post->body = $request->input('body');
+    $post->zoomurl = $request->input('zoomurl');
+    $post->student_image = $request->input('student_image');
+    $post->student_level = $request->input('student_level');
+    $post->user_id = Auth::id();  // ログインユーザーIDを設定
+
+    // 更新された投稿を保存
+    $post->save();
+
+    // 投稿更新後にリダイレクト
+    return redirect()->route('user.dashboard')->with('success', '投稿が更新されました');
+}
 }

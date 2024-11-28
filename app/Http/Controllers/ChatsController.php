@@ -45,7 +45,7 @@ class ChatsController extends Controller
         $chat->save();
     
         // Broadcast the message using the SendUserMessage event
-        //event(new SendUserMessage($chat));
+        event(new SendUserMessage($chat));
     
         // Return a JSON response indicating success
         return response()->json(['success' => true, 'message' => 'Message sent successfully']);
@@ -76,7 +76,7 @@ public function sendMessage(Request $request)
     $message->receiver_id = $request->receiver_id;
     $message->message = $request->message;
     $message->save();
-    //broadcast(new SendAdminMessage($message))->toOthers();
+    broadcast(new SendAdminMessage($message))->toOthers();
 
     return response()->json([
         'success' => true,

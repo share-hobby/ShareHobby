@@ -375,8 +375,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.0.3/pusher.min.js"></script>
         <script>
     // Initialize Pusher
-    var pusher = new Pusher('b23d71886d55f985f153', {
-        cluster: 'ap2',
+    var pusher = new Pusher('e3f2d253ec04e862da41', {
+        cluster: 'ap3',
         encrypted: true
     });
 

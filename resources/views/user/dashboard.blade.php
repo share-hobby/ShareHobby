@@ -86,6 +86,9 @@
                             </div>
                         </div>
                     </div>
+                    <div>
+                    <a href ={{ route('user.create') }}>新規登録</a>
+                    </div>
                     <div class="row">
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card tale-bg">

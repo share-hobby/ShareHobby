@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,6 +15,7 @@ Route::post('/user/check', [UsersController::class, 'check'])->name('user.check'
 Route::get('/user/logout', [UsersController::class, 'logout'])->name('user.logout');
 Route::get('/user/profile', [UsersController::class, 'profile'])->name('user.profile');
 Route::get('/user/login', [UsersController::class, 'login'])->name('user.login');
+Route::get('/login', [UsersController::class, 'login'])->name('login');
 Route::get('/user/profile', [UsersController::class, 'profile'])->name('user.profile');
 Route::get('/user/register', [UsersController::class, 'register'])->name('user.register');
 Route::get('/user/profileview', [UsersController::class, 'profile'])->name('user.profileview');
@@ -21,6 +23,8 @@ Route::get('/user/profileedit', [UsersController::class, 'edit'])->name('user.pr
 Route::get('/user/chats', [UsersController::class, 'chats'])->name('user.chats');
 Route::put('/user/updateProfile', [UsersController::class, 'updateProfile'])->name('user.updateProfile');
 Route::get('/user/dashboard', [UsersController::class, 'dashboard'])->name('user.dashboard');
+Route::get('/user/create',[PostController::class, 'create'])->name('user.create');
+Route::post('/user/posts', [PostController::class, 'store'])->name('posts.store');
 
 
 Route::post('/admin/save', [AdminsController::class, 'save'])->name('admin.save');
@@ -34,6 +38,7 @@ Route::get('/admin/register', [AdminsController::class, 'register'])->name('admi
 Route::get('/admin/chats', [AdminsController::class, 'chats'])->name('admin.chats');
 Route::get('/admin/dashboard', [AdminsController::class, 'dashboard'])->name('admin.dashboard');
 Route::put('/admin/updateProfile', [AdminsController::class, 'updateProfile'])->name('admin.updateProfile');
+
 
 Route::get('/admin/fetch-messages', [ChatsController::class, 'fetchMessages'])->name('admin.fetchMessages');
 Route::post('/admin/send-message', [ChatsController::class, 'sendMessage'])->name('admin.sendMessage');

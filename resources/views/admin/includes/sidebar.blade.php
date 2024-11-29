@@ -5,7 +5,7 @@
     <ul class="nav">
 
         <li class="nav-item rounded-pill">
-            <a class="nav-link" href="/user/dashboard">
+            <a class="nav-link" href="/admin/dashboard">
                 <i class="fas fa-tachometer-alt menu-icon"></i>
                 <span class="menu-title">ホーム画面</span>
             </a>

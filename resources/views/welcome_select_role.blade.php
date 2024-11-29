@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+へへ<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -10,7 +10,8 @@
 
 <body>
     <div class="container">
-        <h1>ログインする役割を選んでください</h1>
+        <h1>ようこそ シェアホビへ</h1>
+        <p>あなたの担当を選択してください</p>
 
         <!-- 生徒の場合 -->
         <button onclick="location.href='{{ url('/user/login') }}'">講師はこちら</button>

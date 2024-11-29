@@ -75,6 +75,7 @@
                                     <h3 class="font-weight-bold">ようこそ @if($LoggedAdminInfo)
                                         <span>{{ $LoggedAdminInfo ['name'] }}</span>
                                         @endif
+                                        さん
                                     </h3>
                                 </div>
                                 @if (session('success'))
@@ -86,25 +87,18 @@
                                 <div class="col-md-12 mt-4 grid-margin">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Users Profile Info</h4>
+                                            <h4 class="card-title">プロフィール情報</h4>
 
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <!-- Display user information -->
-                                                    <p><strong>Name:</strong> {{ $LoggedAdminInfo->name }}</p>
-                                                    <p><strong>Email:</strong> {{ $LoggedAdminInfo->email }}</p>
-                                                    <p><strong>Phone:</strong> {{ $LoggedAdminInfo->phone_number }}</p>
-                                                    <p><strong>Phone:</strong> {{ $LoggedAdminInfo->role }}</p>
-                                                   
-                                                    <p><strong>Account Created At :</strong> {{ $LoggedAdminInfo->created_at}}</p>
-
-                                                    
-                                                    <p><strong>Bio:</strong> {{ $LoggedAdminInfo->bio}}</p>
+                                                    <p><strong>名前:</strong> {{ $LoggedAdminInfo->name }}</p>
+                                                    <p><strong>メールアドレス:</strong> {{ $LoggedAdminInfo->email }}</p>
+                                                    <p><strong>アカウント作成日時:</strong> {{ $LoggedAdminInfo->created_at}}</p>
 
                                                         <!-- Add more fields as needed -->
                                                 </div>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
                                                 <div class="col-md-3 ">
                                                     <!-- Display user image with a smaller size -->
                                                     @if($LoggedAdminInfo->picture)

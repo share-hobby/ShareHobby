@@ -56,6 +56,16 @@
         .btn-submit:hover {
             background-color: #0056b3;
         }
+        .btn-back {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #28a745;
+        }
         label {
             font-weight: bold;
             color: #495057;
@@ -67,50 +77,57 @@
         .form-group {
             margin-bottom: 15px;
         }
+        .form-action .btn {
+        width: 48%; /* ボタン幅を統一 */
+        text-align: center; /* テキストの中央揃え */
+        }
     </style>
     </head>
 
     <body>
     <div class="container">
         <div class="form-container">
-            <h2>投稿内容</h2>
+            <h1>投稿内容</h1>
 
             <!-- 投稿作成フォーム -->
             <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
-                    <label for="title">タイトル</label>
+                    <h3 class="pt-3">タイトル</h3>
                     <input type="text" name="title" id="title" class="form-control" placeholder="例: 新しい投稿タイトル" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="body">本文</label>
+                    <h3 class="pt-3">本文</h3>
                     <textarea name="body" id="body" class="form-control" rows="5" placeholder="例: 投稿の詳細をここに記入してください" required></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="zoomurl">Zoomリンク (任意)</label>
+                    <h3 class="pt-3">Zoomリンク(任意)</h3>
                     <input type="url" name="zoomurl" id="zoomurl" class="form-control" placeholder="例: https://zoom.us/your-meeting-link">
                 </div>
 
                 <div class="form-group">
-                    <label for="image">画像 (任意)</label>
+                    <h3 class="pt-3">画像（任意）</h3>
                     <input type="file" name="image" id="image" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="student_image">求める生徒像 (任意)</label>
+                    <h3 class="pt-3">求める生徒像（任意）</h3>
                     <input type="text" name="student_image" id="student_image" class="form-control" placeholder="例: 積極的な生徒を求めています">
                 </div>
 
                 <div class="form-group">
-                    <label for="student_level">生徒レベル (任意)</label>
+                    <h3 class="pt-3">生徒レベル (任意)</h3>
                     <input type="text" name="student_level" id="student_level" class="form-control" placeholder="例: 中級者以上">
                 </div>
 
-                <div class="form-action">
-                    <button type="submit" class="btn-submit">投稿する</button>
+                <div class="form-action d-flex justify-content-between pt-3">
+                    <!-- 戻るボタン -->
+                    <a href="{{ route('user.dashboard') }}" class="btn btn-back">戻る</a>
+                    <!-- 投稿ボタン -->
+                    <button type="submit" class="btn btn-submit">投稿する</button>
                 </div>
             </form>
         </div>
@@ -121,3 +138,9 @@
     </body>
     
 </html>
+
+<!--
+<div class="form-action">
+    <button type="submit" class="btn-submit">投稿する</button>
+</div>
+-->

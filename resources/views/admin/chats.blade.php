@@ -316,7 +316,7 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="card shadow-sm">
                         <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0">Chats</h4>
+                            <h4 class="mb-0">チャット一覧</h4>
                         </div>
                         <div class="list-group chat-list" id="chatList" style="max-height: 500px; overflow-y: auto;">
                             <ul class="list-group list-group-flush">
@@ -375,7 +375,7 @@
                         <div class="card-header bg-primary text-white">
                             <div class="d-flex align-items-center">
                                 <img id="chat_img" src="" class="rounded-circle mr-3" alt="Profile Picture" style="width: 40px; height: 40px;">
-                                <h4 class="mb-0" id="chat_name">Chatting with</h4>
+                                <h4 class="mb-0" id="chat_name">チャット</h4>
                             </div>
                         </div>
 

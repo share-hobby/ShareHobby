@@ -71,8 +71,18 @@
         }
 
         .post-image {
+            width: 
             text-align: center;
         }
+
+        /* 画像をコンテナ内に収める */
+        .post-image img {
+            max-width: 100%;      /* 画像の幅を親要素（コンテナ）の幅に合わせる */
+            height: auto;         /* 高さを自動で調整してアスペクト比を保持 */
+            display: block;       /* 画像の下に不要な余白ができるのを防ぐ */
+            margin: 0 auto;       /* 画像を中央揃え */
+        }
+
     </style>
 
 </head>

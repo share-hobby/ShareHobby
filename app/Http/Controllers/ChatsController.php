@@ -48,7 +48,7 @@ class ChatsController extends Controller
         event(new SendUserMessage($chat));
     
         // Return a JSON response indicating success
-        return response()->json(['success' => true, 'message' => 'Message sent successfully']);
+        return response()->json(['success' => true, 'message' => 'チャットが送信されました']);
     }
     
 
@@ -80,7 +80,7 @@ public function sendMessage(Request $request)
 
     return response()->json([
         'success' => true,
-        'message' => 'Message sent successfully',
+        'message' => 'チャットが送信されました',
     ]);
 }
 public function fetchMessages(Request $request)

@@ -119,7 +119,7 @@
                                 <div class="post-content">
                                     <h3 class="title">{{ $post->title }}</h3>
                                     <p>作成日時: {{ $post->created_at->format('Y-m-d H:i') }}</p>
-                                    <a href="{{ route('user.show', ['id' => $post->id]) }}">詳細</a>
+                                    <a href="{{ route('user.show', ['id' => $post->id]) }}" class="btn-detail">詳細</a>
                                 </div>
                                 @if($post->image)
                                 <img src="{{ asset('storage/' . $post->image) }}" alt="投稿画像">

@@ -71,6 +71,9 @@ class UsersController extends Controller
     public function login() {
         return view("user.login");
     }
+    public function community() {
+        return view("user.community");
+    }
     public function chats()
     {
         $userId = session('LoggedUserInfo');

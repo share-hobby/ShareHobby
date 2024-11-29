@@ -77,6 +77,9 @@
                                         <span>{{ $LoggedUserInfo ['name'] }}</span>
                                         @endif
                                     </h3>
+
+                                    <a href="{{ route('user.profileedit') }}" class="btn-chat">プロフィール編集 </a>
+
                                 </div>
                                 @if (session('success'))
                     <div class="alert alert-success fade show" role="alert">

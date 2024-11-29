@@ -6,7 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>MyPage</title>
-    <!-- plugins:css -->
+    <link rel="stylesheet" href="{{ asset('css/dashboard_user.css') }}">
+
+    <!-- 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -16,25 +18,28 @@
     <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
     <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
+ 
+ 
     <link rel="stylesheet" href="/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" type="text/css" href="/js/select.dataTables.min.css">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
+    
+
     <link rel="stylesheet" href="/css/vertical-layout-light/style.css">
-    <!-- endinject -->
+ 
     <link rel="shortcut icon" href="/images/favicon.png" />
+-->
 </head>
 
 <body>
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
-        @include('user.includes.navbar')
+
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_settings-panel.html -->
+
+            <!--
             <div class="theme-setting-wrapper">
                 <div id="settings-trigger"><i class="ti-settings"></i></div>
                 <div id="theme-settings" class="settings-panel">
@@ -57,9 +62,12 @@
                     </div>
                 </div>
             </div>
+            -->
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
-            @include('user.includes.sidebar')
+
+
+
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -68,41 +76,55 @@
                             <div class="row">
                                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                                     <h3 class="font-weight-bold">
-                                        Welcome
+                                        ようこそ
                                         @if($LoggedUserInfo)
-                                            <span>{{ $LoggedUserInfo['name'] }}</span>
-                                            <span class="badge badge-primary">{{ $LoggedUserInfo['role'] }}</span>
+                                        <span>{{ $LoggedUserInfo['name'] }}</span>
+                                        <span class="badge badge-primary">{{ $LoggedUserInfo['role'] }}</span>
                                         @endif
+
+                                        さん
                                     </h3>
-                                    <h6 class="font-weight-normal mb-0">All systems are running smoothly!</h6>
+                                    <h6 class="font-weight-normal mb-0"></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                    <a href="{{ route('user.chats') }}" class="btn-chat">チャット画面へ</a>
-                    <a href="{{ route('user.community') }}" class="btn-chat">コミュニティ画面へ</a>
-                    <a href ={{ route('user.create') }}>新規登録</a>
+                    <div class="container">
+                        <div class = "page">
+                            <a href="{{ route('user.chats') }}" class="btn-chat">チャット画面へ</a>
+                            <a href="{{ route('user.community') }}" class="btn-chat">コミュニティ画面へ</a>
+                        </div>
+                        <div class = "profile">
+                            <a href="{{ route('user.profileview') }}" class="btn-chat">プロフィール詳細 </a>
+                          
+                        </div>
+
                     </div>
-                    
+
                     <!-- 投稿機能 -->
                     <div>
-                        <h2>投稿一覧</h2>
+                        <div class="post-main">
+                            <h2>投稿一覧</h2>
+                            <a href="{{ route('user.create') }}" class="btn-post">新規投稿</a>
+                        </div>
                         @if($posts->isEmpty())
-                            <p>投稿はまだありません。</p>
+                        <p>投稿はまだありません。</p>
                         @else
-                            <ul>
-                                @foreach($posts as $post)
-                                    <li class="post-item">
-                                        <h3>{{ $post->title }}</h3>
-                                        @if($post->image)
-                                            <img src="{{ asset('storage/' . $post->image) }}" alt="投稿画像">
-                                        @endif
-                                        <p>作成日時: {{ $post->created_at->format('Y-m-d H:i') }}</p>
-                                        <a href="{{ route('user.show', ['id' => $post->id]) }}">詳細</a>
-                                    </li>
-                                @endforeach
-                            </ul>
+                        <ul>
+                            @foreach($posts as $post)
+                            <li class="post-item">
+
+                                <div class="post-content">
+                                    <h3 class="title">{{ $post->title }}</h3>
+                                    <p>作成日時: {{ $post->created_at->format('Y-m-d H:i') }}</p>
+                                    <a href="{{ route('user.show', ['id' => $post->id]) }}">詳細</a>
+                                </div>
+                                @if($post->image)
+                                <img src="{{ asset('storage/' . $post->image) }}" alt="投稿画像">
+                                @endif
+                            </li>
+                            @endforeach
+                        </ul>
                         @endif
                     </div>
                     <div class="col-12 grid-margin stretch-card">
@@ -110,6 +132,7 @@
                     </div>
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->
+                    <!--
                     <footer class="footer">
                         <div class="d-sm-flex justify-content-center justify-content-sm-between">
                             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
@@ -122,6 +145,7 @@
                             </span>
                         </div>
                     </footer>
+-->
                     <!-- partial -->
                 </div>
                 <!-- main-panel ends -->

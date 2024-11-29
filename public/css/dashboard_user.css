@@ -1,0 +1,215 @@
+/* 全体のスタイル */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(135deg, #a2d9ff 25%, #e0f7ff 75%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+    position: relative;
+}
+
+/* 背景画像 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
+    background: url('/images/longblue3.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    background-color: #a9d0f5;
+}
+
+/* メインコンテナ */
+.main-panel {
+    width: 90%;
+    max-width: 100px;
+    min-width: 800px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    position: relative;
+    z-index: 1;
+    margin-top: 300px;
+}
+
+/* アニメーション */
+@keyframes popup {
+    0% {
+        transform: translateY(40px) scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1.0);
+        opacity: 1;
+    }
+}
+
+/* 見出し */
+h3.font-weight-bold {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #007acc;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 122, 204, 0.5);
+}
+
+.title {
+    font-size: 2em !important;  /* フォントサイズを大きく設定 */
+    font-weight: bold; /* 太字に設定 */
+    color: #007acc; /* 青色に設定 */
+    margin: 0 0 10px 0; /* タイトル下に余白を追加 */
+    text-shadow: 1px 1px 4px rgba(0, 122, 204, 0.3); /* 軽い影を追加 */
+    text-align: left; /* 左揃えに設定 */
+    transition: color 0.3s ease, transform 0.3s ease; /* 色と変形のアニメーションを追加 */
+}
+/* ボタンのスタイル */
+a.btn-chat {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px 5px;
+    transition: all 0.3s ease;
+}
+
+a.btn-chat:hover {
+    background: linear-gradient(135deg, #0078d7, #005f99);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+a[href*="user.create"] {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+}
+
+a[href*="user.create"]:hover {
+    background: linear-gradient(135deg, #388e3c, #1b5e20);
+}
+
+.btn-post {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background: linear-gradient(135deg, #2f57ac, #02328a);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px 5px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    position: absolute; /* 絶対配置 */
+    right: 10%; /* 右側に配置 */
+}
+
+a.btn-post:hover {
+    background: linear-gradient(135deg, #0078d7, #005f99);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+
+.post-main {
+    display: flex;
+    justify-content: center;
+}
+
+/* 親要素をフレックスボックスにする */
+div.container { /* 適宜クラス名を親要素に合わせて変更してください */
+    display: flex;
+    justify-content: center; /* 横並びに中央寄せ */
+    align-items: flex-start; /* 上端を揃える */
+    gap: 20px; /* 子要素間のスペース */
+    margin-bottom: 10px;
+
+}
+
+.page{
+    padding: 10px 20px;
+    font-size: 1.5em;
+    margin-right: 50px;
+}
+
+.profile{
+    margin-top: 13px;
+}
+
+
+/* 投稿リスト */
+h2 {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 投稿アイテムのレイアウト調整 */
+li.post-item {
+    display: flex;
+    align-items: center;
+    background: #f9fbff; /* 薄い青背景 */
+    border: 1px solid #dfe7f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 画像を左側に配置 */
+li.post-item img {
+    max-width: 200px; /* 画像の最大幅を設定 */
+    max-height: 200px; /* 画像の最大高さを設定 */
+    border-radius: 10px;
+    margin-left: auto; /* 画像とテキストの間に余白を追加 */
+    object-fit: cover; /* 縦横比を維持して画像を調整 */
+}
+
+/* テキスト部分を右側に配置 */
+li.post-item div.post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* タイトルのスタイル */
+li.post-item div.post-content h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #005f99;
+    margin: 0 0 10px 0; /* タイトル下に余白を追加 */
+}
+
+/* 作成日時のスタイル */
+li.post-item div.post-content p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0; /* 上下の余白をなしに */
+}

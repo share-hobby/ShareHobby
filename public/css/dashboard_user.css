@@ -213,3 +213,26 @@ li.post-item div.post-content p {
     color: #666;
     margin: 0; /* 上下の余白をなしに */
 }
+/* 詳細リンクボタンのスタイル */
+a.btn-detail {
+    display: inline-block;
+    width: 300px;  /* 幅を固定 */
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+/* ボタンホバー時のスタイル */
+a.btn-detail:hover {
+    background: linear-gradient(135deg, #0078d7, #005f99);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}

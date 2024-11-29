@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Skydash Admin</title>
+    <link rel="stylesheet" href="{{ asset('css/profile_user.css') }}">
     <!-- plugins:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
@@ -72,11 +73,10 @@
                         <div class="col-md-12 grid-margin">
                             <div class="row">
                                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                                    <h3 class="font-weight-bold">Welcome @if($LoggedUserInfo)
+                                    <h3 class="font-weight-bold">ようこそ @if($LoggedUserInfo)
                                         <span>{{ $LoggedUserInfo ['name'] }}</span>
                                         @endif
                                     </h3>
-                                    <h6 class="font-weight-normal mb-0">All systems are running smoothly! </h6>
                                 </div>
                                 @if (session('success'))
                     <div class="alert alert-success fade show" role="alert">
@@ -87,20 +87,16 @@
                                 <div class="col-md-12 mt-4 grid-margin">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Users Profile Info</h4>
+                                            <h4 class="card-title">プロフィール情報</h4>
 
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <!-- Display user information -->
-                                                    <p><strong>Name:</strong> {{ $LoggedUserInfo->name }}</p>
-                                                    <p><strong>Email:</strong> {{ $LoggedUserInfo->email }}</p>
-                                                    <p><strong>Phone:</strong> {{ $LoggedUserInfo->phone_number }}</p>
-                                                    <p><strong>Phone:</strong> {{ $LoggedUserInfo->role }}</p>
+                                                    <p><strong>名前:</strong> {{ $LoggedUserInfo->name }}</p>
+                                                    <p><strong>メールアドレス:</strong> {{ $LoggedUserInfo->email }}</p>
                                                    
-                                                    <p><strong>Account Created At :</strong> {{ $LoggedUserInfo->created_at}}</p>
+                                                    <p><strong>アカウント作成日時:</strong> {{ $LoggedUserInfo->created_at}}</p>
 
-                                                    
-                                                    <p><strong>Bio:</strong> {{ $LoggedUserInfo->bio}}</p>
 
                                                         <!-- Add more fields as needed -->
                                                 </div>
@@ -113,7 +109,7 @@
                                                         alt="Profile Picture" class="img-fluid rounded"
                                                         style="width: 150px; height: 150px;">
                                                     @else
-                                                    <p class="text-muted">No profile picture available</p>
+                                                    <p class="text-muted">プロフィール画像が登録されていません</p>
                                                     @endif
                                                 </div>
                                             </div>

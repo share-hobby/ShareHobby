@@ -1,4 +1,4 @@
-へへ<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>

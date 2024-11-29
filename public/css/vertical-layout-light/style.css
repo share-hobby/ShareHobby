@@ -15687,7 +15687,7 @@ a.close.disabled {
 }
 
 .bg-primary, .settings-panel .color-tiles .tiles.primary {
-  background-color: #4B49AC !important;
+  background-image: linear-gradient(135deg, #A2D9FF 25%, #E0F7FF 75%);
 }
 
 a.bg-primary:hover, .settings-panel .color-tiles a.tiles.primary:hover, a.bg-primary:focus, .settings-panel .color-tiles a.tiles.primary:focus,

@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Include necessary CSS and JS libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -14,11 +13,17 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <!-- 
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
             <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="/images/logo.svg" class="mr-2" alt="logo" /></a>
             <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/images/logo-mini.svg" alt="logo" /></a>
+        </div>
+    -->
+    <div>
+           <h2 style="color: #007acc; font-weight: bold">シェアホビ</h2>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -36,15 +41,15 @@
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown">
                     <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                    <i class="fas fa-bell mx-0"></i>
+                        <i class="fas fa-bell mx-0"></i>
 
-                    </a>                  
-                    
-                 <b>   <span id="notificationCount" class="count">&nbsp;  </span> <!-- Initial value here -->
-                 </b>
+                    </a>
+
+                    <b> <span id="notificationCount" class="count">&nbsp; </span> <!-- Initial value here -->
+                    </b>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                         <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                       
+
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
                                 <div class="preview-icon bg-success">
@@ -54,11 +59,11 @@
                             <div class="preview-item-content">
                                 <h6 class="preview-subject font-weight-normal">New Message</h6>
                                 <p class="font-weight-light small-text mb-0 text-muted">
-                                   
+
                                 </p>
                             </div>
                         </a>
-                      
+
                     </div>
                 </li>
                 <li class="nav-item nav-profile dropdown">
@@ -90,39 +95,40 @@
         </div>
     </nav>
 
-    
+
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var notificationCount = document.getElementById('notificationCount');
+        document.addEventListener('DOMContentLoaded', function() {
+            var notificationCount = document.getElementById('notificationCount');
 
-        var pusher = new Pusher('b23d71886d55f985f153', {
-            cluster: 'ap2'
-        });
+            var pusher = new Pusher('b23d71886d55f985f153', {
+                cluster: 'ap2'
+            });
 
-        var loggedUserId = '{{ $LoggedUserInfo['id'] }}';
-        var channel = pusher.subscribe('user.' + loggedUserId);
+            var loggedUserId = '{{ $LoggedUserInfo['
+            id '] }}';
+            var channel = pusher.subscribe('user.' + loggedUserId);
 
-        channel.bind('new-message', function(data) {
-            if (data.userId == loggedUserId) {
-                toastr.options = {
-                    "closeButton": true,          // Show close button
-                    "progressBar": true,          // Show progress bar
-                    "positionClass": "toast-top-right",  // Position of the toast
-                    "timeOut": "300000",          // Set timeout to 5 minutes (300,000 milliseconds)
-                    "extendedTimeOut": "300000",  // Extend timeout if the user hovers over the toast
-                    "tapToDismiss": false         // Prevent dismissing by clicking on the toast itself
-                };
-                toastr.info('Admin sent you a message: ' + data.message, 'New Message');
+            channel.bind('new-message', function(data) {
+                if (data.userId == loggedUserId) {
+                    toastr.options = {
+                        "closeButton": true, // Show close button
+                        "progressBar": true, // Show progress bar
+                        "positionClass": "toast-top-right", // Position of the toast
+                        "timeOut": "300000", // Set timeout to 5 minutes (300,000 milliseconds)
+                        "extendedTimeOut": "300000", // Extend timeout if the user hovers over the toast
+                        "tapToDismiss": false // Prevent dismissing by clicking on the toast itself
+                    };
+                    toastr.info('Admin sent you a message: ' + data.message, 'New Message');
 
-                // Update notification count
-                var currentCount = parseInt(notificationCount.textContent) || 0;
-                notificationCount.textContent = currentCount + 1;
+                    // Update notification count
+                    var currentCount = parseInt(notificationCount.textContent) || 0;
+                    notificationCount.textContent = currentCount + 1;
 
-                // Prepend new message to the dropdown menu
-                var dropdownMenu = document.querySelector('.dropdown-menu');
-                var messageItem = document.createElement('a');
-                messageItem.classList.add('dropdown-item', 'preview-item');
-                messageItem.innerHTML = `
+                    // Prepend new message to the dropdown menu
+                    var dropdownMenu = document.querySelector('.dropdown-menu');
+                    var messageItem = document.createElement('a');
+                    messageItem.classList.add('dropdown-item', 'preview-item');
+                    messageItem.innerHTML = `
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-success">
                             <i class="ti-info-alt mx-0"></i>
@@ -136,12 +142,13 @@
                         </p>
                     </div>
                 `;
-                dropdownMenu.prepend(messageItem); // Prepend to show it first
-            }
+                    dropdownMenu.prepend(messageItem); // Prepend to show it first
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 
 </body>
+
 </html>

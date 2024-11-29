@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>生徒登録</title>
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
     <!--
     <link rel="stylesheet" href="/vendors/feather/feather.css">

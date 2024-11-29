@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>ログイン生徒情報</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
@@ -77,6 +77,7 @@
                                         @endif
                                         さん
                                     </h3>
+                                    <a href="{{ route('admin.profileedit') }}" class="btn-chat">プロフィール編集 </a>
                                 </div>
                                 @if (session('success'))
                     <div class="alert alert-success fade show" role="alert">

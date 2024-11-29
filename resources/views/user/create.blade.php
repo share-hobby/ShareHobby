@@ -27,8 +27,29 @@
 
         <style>
         body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: linear-gradient(135deg, #A2D9FF 25%, #E0F7FF 75%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+        /* 背景画像 */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 33.33%;
+            background: url('/images/longblue3.png') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            background-color: #A9D0F5;
         }
         .form-container {
             max-width: 600px;

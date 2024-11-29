@@ -89,6 +89,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="container">
                         <div class = "page">
                             <a href="{{ route('user.chats') }}" class="btn-chat">チャット画面へ</a>
@@ -98,6 +99,7 @@
                             <a href="{{ route('user.profileview') }}" class="btn-chat">プロフィール詳細 </a>
                           
                         </div>
+
 
                     </div>
 

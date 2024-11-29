@@ -23,46 +23,124 @@
         <link rel="stylesheet" href="/css/vertical-layout-light/style.css">
         <!-- endinject -->
         <link rel="shortcut icon" href="/images/favicon.png" />
-    </head>        
+
+
+        <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .btn-back {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #28a745;
+        }
+        label {
+            font-weight: bold;
+            color: #495057;
+        }
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-action .btn {
+        width: 48%; /* ボタン幅を統一 */
+        text-align: center; /* テキストの中央揃え */
+        }
+    </style>
+    </head>
+
     <body>
-        <h1>投稿作成</h1>
+    <div class="container">
+        <div class="form-container">
+            <h1>投稿内容</h1>
 
-        <!-- 投稿作成フォーム -->
-        <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+            <!-- 投稿作成フォーム -->
+            <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-            <div class="form-group">
-                <label for="title">タイトル</label>
-                <input type="text" name="title" id="title" class="form-control" required>
-            </div>
+                <div class="form-group">
+                    <h3 class="pt-3">タイトル</h3>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="例: 新しい投稿タイトル" required>
+                </div>
 
-            <div class="form-group">
-                <label for="body">本文</label>
-                <textarea name="body" id="body" class="form-control" required></textarea>
-            </div>
+                <div class="form-group">
+                    <h3 class="pt-3">本文</h3>
+                    <textarea name="body" id="body" class="form-control" rows="5" placeholder="例: 投稿の詳細をここに記入してください" required></textarea>
+                </div>
 
-            <div class="form-group">
-                <label for="zoomurl">Zoomリンク (任意)</label>
-                <input type="url" name="zoomurl" id="zoomurl" class="form-control">
-            </div>
+                <div class="form-group">
+                    <h3 class="pt-3">Zoomリンク(任意)</h3>
+                    <input type="url" name="zoomurl" id="zoomurl" class="form-control" placeholder="例: https://zoom.us/your-meeting-link">
+                </div>
 
-            <div class="form-group">
-                <label for="image">画像 (任意)</label>
-                <input type="file" name="image" id="image" class="form-control">
-            </div>
+                <div class="form-group">
+                    <h3 class="pt-3">画像（任意）</h3>
+                    <input type="file" name="image" id="image" class="form-control">
+                </div>
 
-            <div class="form-group">
-                <label for="student_image">求める生徒像 (任意)</label>
-                <input type="text" name="student_image" id="student_image" class="form-control">
-            </div>
+                <div class="form-group">
+                    <h3 class="pt-3">求める生徒像（任意）</h3>
+                    <input type="text" name="student_image" id="student_image" class="form-control" placeholder="例: 積極的な生徒を求めています">
+                </div>
 
-            <div class="form-group">
-                <label for="student_level">生徒レベル(任意)</label>
-                <input type="student_level" name="student_level" id="student_level" class="form-control">
-            </div>
-            <div class="form-action">
-                <button type="submit" class="btn-submit">投稿する</button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <h3 class="pt-3">生徒レベル (任意)</h3>
+                    <input type="text" name="student_level" id="student_level" class="form-control" placeholder="例: 中級者以上">
+                </div>
+
+                <div class="form-action d-flex justify-content-between pt-3">
+                    <!-- 戻るボタン -->
+                    <a href="{{ route('user.dashboard') }}" class="btn btn-back">戻る</a>
+                    <!-- 投稿ボタン -->
+                    <button type="submit" class="btn btn-submit">投稿する</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (必要であれば使用) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
+    
 </html>
+
+<!--
+<div class="form-action">
+    <button type="submit" class="btn-submit">投稿する</button>
+</div>
+-->

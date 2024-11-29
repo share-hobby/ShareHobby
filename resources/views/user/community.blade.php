@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa;  /* 明るい青系背景 */
+            background-color: rgb(178, 235, 242);  /* 明るい青系背景 */
             color: #333;
         }
         .container {

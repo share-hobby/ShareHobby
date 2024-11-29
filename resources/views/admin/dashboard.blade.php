@@ -28,7 +28,7 @@
                 <a href="{{ route('admin.chats') }}" class="btn-chat">チャット画面へ</a>
                 <a href="{{ route('admin.profileview') }}" class="btn-chat">プロフィール画面へ</a>
 
-                <form action="{{ route('admin.logout') }}" method="POST" class="logout-form">
+                <form action="{{ route('admin.logout') }}" method="GET" class="logout-form">
                     @csrf
                     <button type="submit" class="btn-logout">ログアウト</button>
                 </form>

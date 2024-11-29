@@ -42,7 +42,7 @@ body::before {
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     padding: 30px 50px;
-    max-width: 700px;
+    max-width: 900px;
     width: 90%;
     border: 2px solid #a2d9ff;
     animation: popup 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -59,6 +59,9 @@ body::before {
     }
 }
 
+p{
+    font-size: 20px;
+}
 /* 見出しのスタイル */
 .container h1 {
     font-size: 70px;

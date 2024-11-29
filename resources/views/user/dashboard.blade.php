@@ -75,6 +75,7 @@
                         <div class="col-md-12 grid-margin">
                             <div class="row">
                                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                                <h4 class="page-name">講師 </h4>
                                     <h3 class="font-weight-bold">
                                         ようこそ
                                         @if($LoggedUserInfo)
@@ -89,17 +90,20 @@
                             </div>
                         </div>
                     </div>
+                    <form action="{{ route('user.logout') }}" method="POST" class="logout-form" style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                            @csrf
+                            <button type="submit" class="btn-logout">ログアウト</button>
+                        </form>
 
                     <div class="container">
-                        <div class = "page">
+                        <div class="page">
                             <a href="{{ route('user.chats') }}" class="btn-chat">チャット画面へ</a>
                             <a href="{{ route('user.community') }}" class="btn-chat">コミュニティ画面へ</a>
                         </div>
-                        <div class = "profile">
+                        <div class="profile">
                             <a href="{{ route('user.profileview') }}" class="btn-chat">プロフィール詳細 </a>
-                          
-                        </div>
 
+                        </div>
 
                     </div>
 

@@ -74,6 +74,52 @@ h3.font-weight-bold {
     text-align: left; /* 左揃えに設定 */
     transition: color 0.3s ease, transform 0.3s ease; /* 色と変形のアニメーションを追加 */
 }
+
+.page-name {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: #fff;
+    background: #73a9fc;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 1px;
+    margin-bottom: 1px; /* 下部余白を調整 */
+}
+
+
+.btn-logout {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background: linear-gradient(135deg, #ff5757, #f58a8a);
+    /* 赤系のグラデーション */
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    /* なめらかな変化を追加 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 初期の影 */
+    transform: translateY(0);
+    /* 通常時は動かない */
+    margin-left: 200px;
+}
+
+.btn-logout:hover {
+    background: linear-gradient(135deg, #d94343, #a83232);
+    /* 濃い赤グラデーション */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* 濃い影 */
+    transform: translateY(-3px);
+    /* 浮き上がる効果 */
+}
 /* ボタンのスタイル */
 a.btn-chat {
     display: inline-block;
@@ -139,7 +185,7 @@ div.container { /* 適宜クラス名を親要素に合わせて変更してく�
     display: flex;
     justify-content: center; /* 横並びに中央寄せ */
     align-items: flex-start; /* 上端を揃える */
-    gap: 20px; /* 子要素間のスペース */
+    gap: 10px; /* 子要素間のスペース */
     margin-bottom: 10px;
 
 }

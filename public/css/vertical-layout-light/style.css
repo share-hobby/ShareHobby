@@ -28591,7 +28591,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active > .nav-link {
-  background: #4B49AC;
+  background: #A2D9FF;
   position: relative;
 }
 
@@ -28637,7 +28637,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item.active {
-  background: #4B49AC;
+  background: #A2D9FF;
 }
 
 .sidebar .nav.sub-menu {
@@ -28645,7 +28645,7 @@ div.tagsinput span.tag a {
   margin-top: 0;
   list-style: none;
   padding: 0.25rem 0 0 3.07rem;
-  background: #4B49AC;
+  background: #A2D9FF;
   padding-bottom: 12px;
 }
 

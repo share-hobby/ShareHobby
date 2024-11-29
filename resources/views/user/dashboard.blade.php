@@ -82,7 +82,7 @@
                     <div>
                     <a href="{{ route('user.chats') }}" class="btn-chat">チャット画面へ</a>
                     <a href="{{ route('user.community') }}" class="btn-chat">コミュニティ画面へ</a>
-                    <a href ={{ route('user.create') }}>新規登録</a>
+                    <a href ={{ route('user.create') }}>新規投稿</a>
                     </div>
                     
                     <!-- 投稿機能 -->

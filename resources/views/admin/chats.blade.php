@@ -391,7 +391,7 @@
                                 <input type="hidden" name="receiver_id" id="receiver_id">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Type your message here..." id="messageInput" name="message">
-                                    <button class="btn btn-primary" type="submit" id="sendMessageButton">Send</button>
+                                    <button class="btn btn-primary" type="submit" id="sendMessageButton">送信する</button>
                                 </div>
                             </form>
                         </div>

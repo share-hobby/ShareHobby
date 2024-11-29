@@ -9,81 +9,83 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #e0f7fa;  /* 明るい青系背景 */
             color: #333;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
         h1 {
             text-align: center;
             margin-bottom: 40px;
-            font-size: 2.5rem;  /* 見出しを大きく */
+            font-size: 3rem;  /* 見出しを大きく */
+            color: #0277bd;  /* 青色 */
         }
         .community-item {
             background: #fff;
-            border-radius: 15px;  /* 角の丸みを大きく */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* 影を強調 */
-            margin-bottom: 40px;  /* 下の余白を広げる */
-            padding: 50px;  /* パディングを広げる */
+            border-radius: 20px;  /* 角を丸める */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* 影を強調 */
+            margin-bottom: 30px;  /* 下の余白を広げる */
+            padding: 40px 20px;  /* パディングを広げる */
             display: flex;
             flex-direction: column;
             align-items: center;
             overflow: hidden;
             transition: transform 0.3s ease;
-            width: 100%;
         }
         .community-item img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;  /* 画像と文字の間隔を広げる */
+            border-radius: 15px;
+            margin-bottom: 20px;
         }
         .community-item h2 {
-            font-size: 2rem;  /* 見出しのフォントサイズを大きく */
-            margin-bottom: 15px;
+            font-size: 2.5rem;  /* 見出しのフォントサイズを大きく */
+            margin-bottom: 10px;
             line-height: 1.4;
+            color: #0288d1;  /* 見出しの色を少し濃い青に */
         }
         .community-item p {
-            font-size: 1.2rem;  /* 本文のフォントサイズを大きく */
+            font-size: 1.5rem;  /* 本文のフォントサイズを大きく */
             margin-bottom: 20px;
-            line-height: 1.6;  /* 行間を広げて読みやすく */
+            line-height: 1.8;
         }
         .community-item a {
             display: inline-block;
-            padding: 18px 36px;
-            background-color: #007BFF;
+            padding: 20px 40px;
+            background-color: #0288d1;  /* 青色 */
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;  /* ボタンのフォントサイズを大きく */
+            border-radius: 8px;
+            font-size: 1.5rem;  /* ボタンのフォントサイズを大きく */
             text-align: center;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
         }
         .community-item a:hover {
-            background-color: #0056b3;
+            background-color: #01579b;  /* ボタンホバー時の色 */
         }
         .community-meta {
-            font-size: 1.1rem;  /* メタ情報のフォントサイズを少し大きく */
+            font-size: 1.3rem;
             color: #555;
             margin-top: 10px;
         }
         .btn-back {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #28a745;
+            padding: 20px 40px;
+            background-color: #4caf50;  /* 緑色の戻るボタン */
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
+            border-radius: 8px;
+            font-size: 1.5rem;
             transition: background-color 0.3s ease;
             text-align: center;
-            margin: 20px auto 0; /* 中央揃えと上部の余白を調整 */
+            margin-top: 30px;
         }
         .btn-back:hover {
-            background-color: #218838;
+            background-color: #388e3c;
         }
     </style>
 </head>
